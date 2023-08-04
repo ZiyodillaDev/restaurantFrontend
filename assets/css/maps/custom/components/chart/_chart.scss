@@ -1,0 +1,23 @@
+.admin-chart-7{
+    min-height: 155px !important;
+    .apexcharts-bar-series.apexcharts-plot-series .apexcharts-series path {
+        clip-path: inset(1% 0% 0% 0% round .6rem);
+    }
+}
+.admin-chart-2{
+    width: 200px;
+}
+.admin-chart-3{
+    width: 200px;
+}
+#admin-chart-8{
+    .apexcharts-canvas {
+        margin: 0 auto;
+    }
+    
+} 
+@media (max-width: 1366px){
+    .admin-chart-7 {
+        min-height: 100px !important;
+    }
+}

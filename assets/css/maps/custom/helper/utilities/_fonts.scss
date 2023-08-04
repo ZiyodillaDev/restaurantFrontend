@@ -1,0 +1,32 @@
+.text-ellipsis {
+	&.short-1{
+        @include text-ellipsis(1)
+    }
+    &.short-2{
+        @include text-ellipsis(2)
+    }
+    &.short-3{
+        @include text-ellipsis(3)
+    }
+    &.short-4{
+        @include text-ellipsis(4)
+    }
+    &.short-5{
+        @include text-ellipsis(5)
+    }
+    &.short-6{
+        @include text-ellipsis(6)
+    }
+    &.short-7{
+        @include text-ellipsis(7)
+    }
+    &.short-8{
+        @include text-ellipsis(8)
+    }
+    &.short-9{
+        @include text-ellipsis(9)
+    }
+    &.short-10{
+        @include text-ellipsis(10)
+    }
+}
