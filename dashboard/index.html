@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Aprycot | Restaurant Management Admin Template</title>
 
-
   <!-- Favicon -->
   <link rel="shortcut icon" href="../assets/images/favicon.ico" />
 
@@ -2595,7 +2594,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="../dashboard/admin-dashboard.html">
+                <a class="nav-link" href="../dashboard/admin-dashboard.html">
                   <i class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                       <g>
@@ -2827,10 +2826,6 @@
           <li>
             <hr class="hr-horizontal" />
           </li>
-
-
-
-
         </ul>
         <!-- Sidebar Menu End -->
       </div>
@@ -4105,8 +4100,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
-
-
               <li class="nav-item dropdown">
                 <a class="nav-link py-0 d-flex align-items-center" href="#" id="navbarDropdown" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
@@ -4114,14 +4107,10 @@
                     class="img-fluid avatar avatar-50 avatar-rounded" />
                   <div class="caption ms-3 d-none d-md-block">
                     <h6 class="mb-0 caption-title">Admin</h6>
-                    <p class="mb-0 caption-sub-title">
-                      Administrator
-                    </p>
+                    <p class="mb-0 caption-sub-title">Administrator</p>
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
-
                   <li>
                     <a class="dropdown-item logOut" href="../dashboard/auth/sign-in.html">Logout</a>
                   </li>
@@ -4155,7 +4144,7 @@
             data-iq-trigger="scroll" data-iq-ease="none">
             <div class="card-header border-0 pb-0">
               <div class="header-title">
-                <h4 class="card-title">Top Delivery List</h4>
+                <h4 class="card-title">Top User List</h4>
               </div>
             </div>
             <div class="card-body py-0">
@@ -4238,7 +4227,6 @@
           </div>
         </div>
         <div class="col-lg-5 col-xl-4">
-
           <div class="card" data-iq-gsap="onStart" data-iq-opacity="0" data-iq-position-y="-40" data-iq-duration=".6"
             data-iq-delay="1" data-iq-trigger="scroll" data-iq-ease="none">
             <div class="card-header">
@@ -4301,10 +4289,10 @@
               </div>
             </div>
           </div>
-          <div class="card " data-iq-gsap="onStart" data-iq-opacity="0" data-iq-position-y="-40" data-iq-duration=".6"
+          <div class="card" data-iq-gsap="onStart" data-iq-opacity="0" data-iq-position-y="-40" data-iq-duration=".6"
             data-iq-delay=".9" data-iq-trigger="scroll" data-iq-ease="none">
             <div class="card-header">
-              <h4 class="card-title">Last 5 Deliveries</h4>
+              <h4 class="card-title">Last 5 Users</h4>
             </div>
             <div class="card-body LastDel">
               <div class="d-flex align-items-center mb-5">
@@ -4316,7 +4304,6 @@
                     <h6 class="heading-title fw-bolder">Veg Cripsy</h6>
                     <h6 class="heading-title">21.07.2005</h6>
                   </div>
-
                 </div>
               </div>
               <div class="d-flex align-items-center mb-5">
@@ -4328,7 +4315,6 @@
                     <h6 class="heading-title fw-bolder">Veg Cripsy</h6>
                     <h6 class="heading-title">21.07.2005</h6>
                   </div>
-
                 </div>
               </div>
               <div class="d-flex align-items-center mb-5">
@@ -4340,7 +4326,6 @@
                     <h6 class="heading-title fw-bolder">Veg Cripsy</h6>
                     <h6 class="heading-title">21.07.2005</h6>
                   </div>
-
                 </div>
               </div>
               <div class="d-flex align-items-center mb-5">
@@ -4352,7 +4337,6 @@
                     <h6 class="heading-title fw-bolder">Veg Cripsy</h6>
                     <h6 class="heading-title">21.07.2005</h6>
                   </div>
-
                 </div>
               </div>
               <div class="d-flex align-items-center">
@@ -4364,10 +4348,8 @@
                     <h6 class="heading-title fw-bolder">Veg Cripsy</h6>
                     <h6 class="heading-title">21.07.2005</h6>
                   </div>
-
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -4442,11 +4424,11 @@
   <!-- moment JavaScript -->
   <script src="../assets/vendor/moment.min.js"></script>
   <script>
-    const logOut = document.querySelector(".logOut")
+    const logOut = document.querySelector(".logOut");
     logOut.addEventListener("click", () => {
-      localStorage.removeItem("token")
-      localStorage.removeItem("role")
-    })
+      localStorage.removeItem("token");
+      localStorage.removeItem("role");
+    });
   </script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 
@@ -4454,14 +4436,37 @@
     const token = localStorage.getItem("token");
 
     const labels = [
-      "All Deliveries", "Pending", "Accepted", "Cancelled"
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
     ];
     let dataAll = [];
+    let January = [];
+    let February = [];
+    let March = [];
+    let April = [];
+    let May = [];
+    let June = [];
+    let July = [];
+    let August = [];
+    let September = [];
+    let October = [];
+    let November = [];
+    let December = [];
 
     fetch("http://localhost:5000/api/userStatistics", {
         method: "GET",
         headers: {
-          "Authorization": `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((res) => {
@@ -4469,8 +4474,46 @@
       })
       .then(async (data) => {
         if (data) {
-          await Object.values(data).forEach((element) => {
-            dataAll.push(element)
+          await data.allUsers.forEach((element) => {
+            console.log(element.createdAt.split("-")[1]);
+            element.createdAt.split("-")[1] == "01" ?
+              January.push(element) : [];
+            element.createdAt.split("-")[1] == "02" ?
+              February.push(element) : [];
+            element.createdAt.split("-")[1] == "03" ?
+              March.push(element) : [];
+            element.createdAt.split("-")[1] == "04" ?
+              April.push(element) : [];
+            element.createdAt.split("-")[1] == "05" ?
+              May.push(element) : [];
+            element.createdAt.split("-")[1] == "06" ?
+              June.push(element) : [];
+            element.createdAt.split("-")[1] == "07" ?
+              July.push(element) : [];
+            element.createdAt.split("-")[1] == "08" ?
+              August.push(element) : [];
+            element.createdAt.split("-")[1] == "09" ?
+              September.push(element) : [];
+            element.createdAt.split("-")[1] == "10" ?
+              October.push(element) : [];
+            element.createdAt.split("-")[1] == "11" ?
+              November.push(element) : [];
+            element.createdAt.split("-")[1] == "12" ?
+              December.push(element) : [];
+            dataAll.push(
+              January.length,
+              February.length,
+              March.length,
+              April.length,
+              May.length,
+              June.length,
+              July.length,
+              August.length,
+              September.length,
+              October.length,
+              November.length,
+              December.length
+            );
           });
         }
       })

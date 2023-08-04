@@ -14,7 +14,7 @@ function getClients(data = clients, list = LastDeliveries) {
       </div>
       <div class="flex-grow-1">
         <div class="d-flex align-items-center justify-content-between mb-3">
-          <h6 class="heading-title fw-bolder">${el.fullname}</h6>
+          <h6 class="heading-title fw-bolder">${el.name}</h6>
           <h6 class="heading-title">${el.createdAt.split("T")[0]}</h6>
         </div>
 
@@ -55,12 +55,12 @@ function getClients3(data = clients, list = TopDeliveries) {
       <div class="d-flex align-items-center">
         <img class="bg-soft-primary rounded img-fluid avatar-40 me-3"
           src="http://localhost:5000/${el.image}" alt="profile" />
-        <p class="mb-0">${el.fullname}</p>
+        <p class="mb-0">${el.name}</p>
       </div>
     </td>
-    <td>${el.username}</td>
-    <td>${el.phone}</td>
+    <td>${el.settedLocation}</td>
     <td>${el.email}</td>
+    <td>${el.balance}</td>
   </tr>
 
             `;
@@ -70,7 +70,7 @@ function getClients3(data = clients, list = TopDeliveries) {
 const skip = 1;
 const limit = 5;
 const Deliveries = () => {
-  fetch(`http://localhost:5000/api/users/${skip}/${limit}`, {
+  fetch(`http://localhost:5000/api/restaurant/${skip}/${limit}`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -109,7 +109,7 @@ const Orders = () => {
 };
 
 const TopDelivery = () => {
-  fetch(`http://localhost:5000/api/users/${skip}/${limit}`, {
+  fetch(`http://localhost:5000/api/restaurant/${skip}/${limit}`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -121,7 +121,36 @@ const TopDelivery = () => {
     .then((data) => {
       console.log(data);
       if (data) {
-        getClients3(data, TopDeliveries);
+        data.forEach((item) => {
+          fetch(
+            `https://api.opencagedata.com/geocode/v1/json?q=${
+              item.location.split(" ")[0]
+            }+${
+              item.location.split(" ")[1]
+            }&key=87f526f534114673b84ec3e7d9b3adda`,
+            {
+              method: "GET",
+            }
+          )
+            .then((res) => {
+              return res.json();
+            })
+            .then((data) => {
+              let settedLocation =
+                data.results[0].components.state +
+                " , " +
+                data.results[0].components.country;
+              console.log(item);
+              item.settedLocation = settedLocation ;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+          console.log(item);
+          setTimeout(() => {
+            getClients3(data, TopDeliveries);
+          }, 500);
+        });
       }
     })
     .catch((err) => console.log(err));
